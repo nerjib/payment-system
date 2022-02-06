@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const app = express();
 const { resolve } = require("path");
 const env = require("dotenv").config({ path: resolve("../../.env") });
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const stripe = require("stripe")('sk_test_51KPk4hG3qtUfMBk1g045CSDKbRInzr7aAC8pKMPzXUZzq1LJgADNGlmg1t5Odty74vcCVXScVopX5t2WAJLZfzYk00j0207GVb');
 //const app = require('../../stripe/src/App')
 app.use(express.static("../frontend"));
 app.use(bodyParser.json());
