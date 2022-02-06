@@ -1,12 +1,17 @@
 const express = require("express");
 const bodyParser = require('body-parser')
+const cors = require('cors')
 const app = express();
 const { resolve } = require("path");
 const env = require("dotenv").config({ path: resolve("../../.env") });
 const stripe = require("stripe")('sk_test_51KPk4hG3qtUfMBk1g045CSDKbRInzr7aAC8pKMPzXUZzq1LJgADNGlmg1t5Odty74vcCVXScVopX5t2WAJLZfzYk00j0207GVb');
 //const app = require('../../stripe/src/App')
+
+app.use(cors())
+app.use(express.urlencoded({ extended: false, limit: '20mb' }));
 app.use(express.static("../frontend"));
-app.use(bodyParser.json());
+
+app.use(express.json({limit: '20mb'}));
 
 app.get("/", (req, res) => {
   const path = resolve("../frontend/index.html");
@@ -75,7 +80,7 @@ app.get("/account/:id", async (req, res) => {
   
   }).then(resp=>{
     res.send(resp)
-   // return;
+   return;
 }).catch(err=>{res.send(err)
 return;
 });
