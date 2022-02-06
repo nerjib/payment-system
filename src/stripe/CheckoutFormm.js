@@ -47,7 +47,7 @@ export default function  CheckoutFormm(props) {
   return (
     <form onSubmit={handleSubmit}>
       <CardSection />
-      Helllllllllllllllllllllo
+      Pay {props.amount}
       <button disabled={!stripe}>Complete donation here!</button>
     </form>
   );

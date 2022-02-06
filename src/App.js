@@ -13,12 +13,12 @@ export default function App() {
 
   return (
     <div className="App">
-    <div className="product">
-      <img
+    <div className="product" style={{height:500, alignContent:'center', margin:30, justifyContent:'center', flexDirection:'column'}}>
+    {/*  <img
         src="https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png"
         alt="laptop"
         style={{ width: "50%", height: "50%" }}
-      />
+      />*/}
       <div>
           <OrphansList/>
          
